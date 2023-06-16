@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.entity.Store;
-import com.example.demo.entity.StoreDAO;
+import com.example.demo.service.StoreService;
 
 @Controller
 public class MainController {
 	
 	@Autowired
-	private StoreDAO storeService;
+	private StoreService storeService;
 	
 	@GetMapping("/")
 	public String getHomepage() {
@@ -25,8 +25,8 @@ public class MainController {
 	
 	@GetMapping("/stores")
 	public String getStoresPage(Model model) {
-		List<Store> stores = storeService.getAllStores(); // get all existing stores objects
-		model.addAttribute("stores", stores); // inject "stores" into FE
+		List<Store> stores = storeService.getAllStores();
+		model.addAttribute("stores", stores); 
 		return "stores";
 	}
 	
@@ -37,7 +37,7 @@ public class MainController {
 	
 	@PostMapping("/add-store")
 	public String addStore(@ModelAttribute("store") Store store) {
-		storeService.saveStore(store);
+		storeService.saveNewStore(store);
 		return "redirect:stores";
 	}
 

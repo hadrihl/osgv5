@@ -28,7 +28,7 @@
                         <a href="#" class="nav-link">About</a>
                     </li>
                     <li class="nav-item active">
-                        <a href="#" class="nav-link">LocateMe</a>
+                        <a href="/stores" class="nav-link">Stores</a>
                     </li>
                 </ul>
   		</div>
@@ -58,16 +58,18 @@
 
 	<!-- if stores not exists, show stores not found -->
 	<c:if test="${empty stores}">
-	<div class="container"><h2>No Store foundahhhhhhhh.</h2></div>
+	<div class="container"><h2>No Store found.</h2></div>
 	</c:if>
 	
 	<!-- if the stores exists, view stores -->
 	<c:if test="${not empty stores}">
-	<c:forEach var="store" items="${stores}">
+	
 	
 	<!-- store card template -->
 	<div class="container mb-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
+        
+        	<c:forEach var="store" items="${stores}">
             <div class="col">
                 <div class="card h-100">
                   <img src="assets/img/store4_pexels-pixabay-264636.jpg" class="card-img-top" alt="...">
@@ -80,12 +82,14 @@
                     <small class="text-muted">Last updated 5 days ago</small>
                     <a href="#"><i class="fa-solid fa-pen-to-square"style="float: right; display: inline-block;"></i></a>
                   </div>
-                </div>
+                </div> 
             </div>
+            </c:forEach>
+            
         </div>
     </div>
 	
-	</c:forEach>
+	
 	</c:if>
 	
     

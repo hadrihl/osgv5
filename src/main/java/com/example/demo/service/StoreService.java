@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.example.demo.entity.Store;
 import com.example.demo.repository.StoreRepository;
 
@@ -13,6 +13,7 @@ import com.example.demo.repository.StoreRepository;
 @Transactional
 public class StoreService {
 
+	@Autowired
 	private StoreRepository storeRepository;
 	
 	// get store information by id
@@ -23,8 +24,7 @@ public class StoreService {
 	
 	// get all stores information
 	public List<Store> getAllStores() {
-		List<Store> stores = storeRepository.findAll();
-		return stores;
+		return storeRepository.findAll();
 	}
 	
 	// save new store

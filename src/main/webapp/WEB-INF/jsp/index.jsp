@@ -21,13 +21,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a href="#" class="nav-link">Home</a>
+                        <a href="/" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item active">
                         <a href="#" class="nav-link">About</a>
                     </li>
                     <li class="nav-item active">
-                        <a href="/stores" class="nav-link">LocateMe</a>
+                        <a href="/stores" class="nav-link">Stores</a>
                     </li>
                 </ul>
   		</div>
