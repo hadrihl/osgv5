@@ -80,7 +80,7 @@
                   </div>
                   <div class="card-footer">
                     <small class="text-muted">Last updated 5 days ago</small>
-                    <a href="#"><i class="fa-solid fa-pen-to-square"style="float: right; display: inline-block;"></i></a>
+                    <a href="/edit-store?id=${store.id}"><i class="fa-solid fa-pen-to-square"style="float: right; display: inline-block;"></i></a>
                   </div>
                 </div> 
             </div>

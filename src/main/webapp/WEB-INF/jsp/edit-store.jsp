@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -25,7 +27,7 @@
                         <a href="#" class="nav-link">About</a>
                     </li>
                     <li class="nav-item active">
-                        <a href="/stores" class="nav-link">LocateMe</a>
+                        <a href="/stores" class="nav-link">Stores</a>
                     </li>
                 </ul>
   		</div>
@@ -75,7 +77,7 @@
       <!-- Modal footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-        <a href="#" class="btn btn-danger">Delete</a>
+        <a href="/delete-store?id=${store.id}" class="btn btn-danger">Delete</a>
       </div>
 
     </div>
@@ -87,37 +89,23 @@
         
       </div>
       
+      
       <form class="form-group" action="/update-store" method="post" modelAttribute="store">
       
       	<div class="mb-3">
       		<label class="form-label">Store ID: </label>
-      		<input class="form-control" name="store_id" value="" aria-label="Store ID" readonly="true" />
+      		<input class="form-control" name="id" value="${store.id }" aria-label="Store ID" readonly="true" />
       	</div>
 
         <div class="mb-3">
           <label class="form-label">*Store name: </label>
-          <input class="form-control" name="name" id="store_name" value="" aria-label="Store name" required />
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">*Store description: </label>
-          <input class="form-control" name="info" id="store_desc" value="" aria-label="Store description" required />
+          <input class="form-control" name="name" id="store_name" value="${store.name }" aria-label="Store name" required />
         </div>
 
         <div class="mb-3">
           <label class="form-label">*Phone: </label>
-          <input class="form-control" name="phone" id="store_phone" value="" aria-label="Store phone number" required />
+          <input class="form-control" name="phone" id="store_phone" value="${store.phone }" aria-label="Store phone number" required />
         </div>
-
-        <div class="mb-3">
-          <label class="form-label">*Address: </label>
-          <input class="form-control" name="address" id="store_address" value="" aria-label="Store address" required />
-        </div>
-        
-        <div class="mb-3">
-        	<label class="form-label" for="customFile">Store photo</label>
-        	<input type="file" name="img" class="form-control" id="customFile" value="" />
-      	</div>
       	
       	<div class="py-5">
         	<a href="#" class="btn btn-danger">Cancel</a>
