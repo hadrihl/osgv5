@@ -47,7 +47,7 @@ public class UserController {
 			//redirect to signin page
 			return "redirect:signin";
 		}
-		
+
 	}
 	
 	

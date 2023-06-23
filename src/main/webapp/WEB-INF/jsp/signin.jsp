@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,8 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
   <body>
-  
-    <form class="mt-5" action="/signin" method="post">
+ 
+    <form class="mt-5" action="/login" method="post">
     	<input type="hidden" name="${_csrf.parameterName}"
 						value="${_csrf.token}" />
 						
